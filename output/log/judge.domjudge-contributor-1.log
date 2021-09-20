@@ -1,0 +1,48 @@
+[Sep 13 11:32:25.670] judgedaemon[14795]: Judge started on domjudge-contributor-1 [DOMjudge/7.3.3]
+[Sep 13 11:32:25.675] judgedaemon[14795]: Installing signal handlers
+[Sep 13 11:32:25.675] judgedaemon[14795]: executing chroot script: 'chroot-startstop.sh check'
+[Sep 13 11:32:25.679] judgedaemon[14795]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 13 11:32:25.682] judgedaemon[14795]: API request POST judgehosts
+[Sep 13 11:32:26.077] judgedaemon[14795]: API request GET config
+[Sep 13 11:32:26.161] judgedaemon[14795]: API request POST judgehosts/next-judging/domjudge-contributor-1
+[Sep 13 11:32:26.276] judgedaemon[14795]: No submissions in queue (for endpoint default), waiting...
+[Sep 13 11:45:53.542] judgedaemon[14795]: Signal 15 received
+[Sep 13 11:45:53.543] judgedaemon[14795]: Received signal, exiting.
+[Sep 14 09:18:21.654] judgedaemon[2049]: Judge started on domjudge-contributor-1 [DOMjudge/7.3.3]
+[Sep 14 09:18:21.657] judgedaemon[2049]: Installing signal handlers
+[Sep 14 09:18:21.657] judgedaemon[2049]: executing chroot script: 'chroot-startstop.sh check'
+[Sep 14 09:18:21.658] judgedaemon[2049]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 14 09:18:21.660] judgedaemon[2049]: API request POST judgehosts
+[Sep 14 09:18:21.661] judgedaemon[2049]: warning: Error while executing curl POST to url http://localhost/api/judgehosts: http status code: 502, request size = 31, response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+[Sep 14 09:18:21.661] judgedaemon[2049]: Registering judgehost on endpoint default failed.
+[Sep 14 09:18:21.661] judgedaemon[2049]: API request GET config
+[Sep 14 09:18:21.665] judgedaemon[2049]: error: Error while executing curl GET to url http://localhost/api/config?: http status code: 502, request size = 0, response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+[Sep 14 09:18:22.764] judgedaemon[2128]: Judge started on domjudge-contributor-1 [DOMjudge/7.3.3]
+[Sep 14 09:18:22.767] judgedaemon[2128]: Installing signal handlers
+[Sep 14 09:18:22.767] judgedaemon[2128]: executing chroot script: 'chroot-startstop.sh check'
+[Sep 14 09:18:22.769] judgedaemon[2128]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 14 09:18:22.770] judgedaemon[2128]: API request POST judgehosts
+[Sep 14 09:18:23.215] judgedaemon[2128]: API request GET config
+[Sep 14 09:18:23.298] judgedaemon[2128]: API request POST judgehosts/next-judging/domjudge-contributor-1
+[Sep 14 09:18:23.383] judgedaemon[2128]: No submissions in queue (for endpoint default), waiting...
+[Sep 14 12:04:00.634] judgedaemon[2128]: warning: Error while executing curl POST to url http://localhost/api/judgehosts/next-judging/domjudge-contributor-1: Failed to connect to localhost port 80: Connection refused
+[Sep 14 12:04:00.634] judgedaemon[2128]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 14 12:04:00.640] judgedaemon[2128]: API request POST judgehosts
+[Sep 14 12:04:00.641] judgedaemon[2128]: warning: Error while executing curl POST to url http://localhost/api/judgehosts: Failed to connect to localhost port 80: Connection refused
+[Sep 14 12:04:00.641] judgedaemon[2128]: Registering judgehost on endpoint default failed.
+[Sep 14 12:04:05.642] judgedaemon[2128]: Signal 15 received
+[Sep 14 12:04:05.642] judgedaemon[2128]: Received signal, exiting.

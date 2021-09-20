@@ -1,0 +1,96 @@
+[Sep 13 11:32:25.669] judgedaemon[14794]: Judge started on domjudge-contributor-0 [DOMjudge/7.3.3]
+[Sep 13 11:32:25.675] judgedaemon[14794]: Installing signal handlers
+[Sep 13 11:32:25.675] judgedaemon[14794]: executing chroot script: 'chroot-startstop.sh check'
+[Sep 13 11:32:25.677] judgedaemon[14794]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 13 11:32:25.682] judgedaemon[14794]: API request POST judgehosts
+[Sep 13 11:32:26.077] judgedaemon[14794]: API request GET config
+[Sep 13 11:32:26.161] judgedaemon[14794]: API request POST judgehosts/next-judging/domjudge-contributor-0
+[Sep 13 11:32:26.275] judgedaemon[14794]: No submissions in queue (for endpoint default), waiting...
+[Sep 13 11:45:53.543] judgedaemon[14794]: Signal 15 received
+[Sep 13 11:45:53.543] judgedaemon[14794]: Received signal, exiting.
+[Sep 14 09:18:21.654] judgedaemon[2048]: Judge started on domjudge-contributor-0 [DOMjudge/7.3.3]
+[Sep 14 09:18:21.657] judgedaemon[2048]: Installing signal handlers
+[Sep 14 09:18:21.657] judgedaemon[2048]: executing chroot script: 'chroot-startstop.sh check'
+[Sep 14 09:18:21.659] judgedaemon[2048]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 14 09:18:21.660] judgedaemon[2048]: API request POST judgehosts
+[Sep 14 09:18:21.661] judgedaemon[2048]: warning: Error while executing curl POST to url http://localhost/api/judgehosts: http status code: 502, request size = 31, response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+[Sep 14 09:18:21.661] judgedaemon[2048]: Registering judgehost on endpoint default failed.
+[Sep 14 09:18:21.661] judgedaemon[2048]: API request GET config
+[Sep 14 09:18:21.661] judgedaemon[2048]: error: Error while executing curl GET to url http://localhost/api/config?: http status code: 502, request size = 0, response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.18.0 (Ubuntu)</center>
+</body>
+</html>
+
+[Sep 14 09:18:22.731] judgedaemon[2120]: Judge started on domjudge-contributor-0 [DOMjudge/7.3.3]
+[Sep 14 09:18:22.733] judgedaemon[2120]: Installing signal handlers
+[Sep 14 09:18:22.734] judgedaemon[2120]: executing chroot script: 'chroot-startstop.sh check'
+[Sep 14 09:18:22.735] judgedaemon[2120]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 14 09:18:22.736] judgedaemon[2120]: API request POST judgehosts
+[Sep 14 09:18:23.215] judgedaemon[2120]: API request GET config
+[Sep 14 09:18:23.298] judgedaemon[2120]: API request POST judgehosts/next-judging/domjudge-contributor-0
+[Sep 14 09:18:23.379] judgedaemon[2120]: No submissions in queue (for endpoint default), waiting...
+[Sep 14 11:26:13.397] judgedaemon[2120]: Judging submission s1 (endpoint default) (t2/p1/cpp), id j1...
+[Sep 14 11:26:13.397] judgedaemon[2120]: API request GET config
+[Sep 14 11:26:13.469] judgedaemon[2120]: Working directory: /domjudge/output/judgings/domjudge-contributor-0/endpoint-default/2/1/1
+[Sep 14 11:26:13.471] judgedaemon[2120]: API request GET contests/2/submissions/1/source-code
+[Sep 14 11:26:13.568] judgedaemon[2120]: Fetching new executable 'cpp'
+[Sep 14 11:26:13.570] judgedaemon[2120]: API request GET executables/cpp
+[Sep 14 11:26:13.646] judgedaemon[2120]: Unzipping
+[Sep 14 11:26:13.650] judgedaemon[2120]: Compiling
+[Sep 14 11:26:13.654] compile.sh[2189]: starting '/domjudge/lib/judge/compile.sh', PID = 2189
+[Sep 14 11:26:13.656] compile.sh[2189]: arguments: '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/executable/cpp/run' '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/2/1/1'
+[Sep 14 11:26:13.658] compile.sh[2189]: source file(s): hello.cpp
+[Sep 14 11:26:13.661] compile.sh[2189]: starting compile
+[Sep 14 11:26:14.821] compile.sh[2189]: checking compilation exit-status
+[Sep 14 11:26:14.824] compile.sh[2189]: Compilation successful
+[Sep 14 11:26:14.825] compile.sh[2189]: exiting, code = '0'
+[Sep 14 11:26:14.826] judgedaemon[2120]: API request PUT judgehosts/update-judging/domjudge-contributor-0/1
+[Sep 14 11:26:14.928] judgedaemon[2120]: executing chroot script: 'chroot-startstop.sh start'
+[Sep 14 11:26:14.964] judgedaemon[2120]: Running testcase 1...
+[Sep 14 11:26:14.964] judgedaemon[2120]: API request GET testcases/1/file/input
+[Sep 14 11:26:15.038] judgedaemon[2120]: API request GET testcases/1/file/output
+[Sep 14 11:26:15.117] judgedaemon[2120]: Fetched new input,output testcase 1 for problem p1
+[Sep 14 11:26:15.120] judgedaemon[2120]: Fetching new executable 'run'
+[Sep 14 11:26:15.122] judgedaemon[2120]: API request GET executables/run
+[Sep 14 11:26:15.198] judgedaemon[2120]: Unzipping
+[Sep 14 11:26:15.201] judgedaemon[2120]: Compiling
+[Sep 14 11:26:15.202] judgedaemon[2120]: Fetching new executable 'compare'
+[Sep 14 11:26:15.204] judgedaemon[2120]: API request GET executables/compare
+[Sep 14 11:26:15.284] judgedaemon[2120]: Unzipping
+[Sep 14 11:26:15.288] judgedaemon[2120]: Compiling
+[Sep 14 11:26:15.602] testcase_run.sh[2310]: starting '/domjudge/lib/judge/testcase_run.sh', PID = 2310
+[Sep 14 11:26:15.603] testcase_run.sh[2310]: arguments: '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/testcase/testcase.1.1.b026324c6904b2a9cb4b88d6d61c81d1.in' '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/testcase/testcase.1.1.59ca0efa9f5633cb0371bbc0355478d8.out' '5:6' '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/2/1/1/testcase001'
+[Sep 14 11:26:15.604] testcase_run.sh[2310]: optionals: '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/executable/run/run' '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/executable/compare/run' ''
+[Sep 14 11:26:15.608] testcase_run.sh[2310]: setting up testing (chroot) environment
+[Sep 14 11:26:15.616] testcase_run.sh[2310]: creating /dev/null character-special device
+[Sep 14 11:26:15.621] testcase_run.sh[2310]: running program
+[Sep 14 11:26:15.622] testcase_run.sh[2310]: runcheck: /domjudge/output/judgings/domjudge-contributor-0/endpoint-default/executable/run/run testdata.in program.out sudo -n /domjudge/bin/runguard -P 0 -r /domjudge/output/judgings/domjudge-contributor-0/endpoint-default/2/1/1/testcase001/.. --nproc=64 --no-core --streamsize=8192 --user=domjudge-run-0 --group=domjudge-run --walltime=5:6 --cputime=5:6 --memsize=2097152 --filesize=8192 --stderr=program.err --outmeta=program.meta -- /testcase001/execdir/program
+[Sep 14 11:26:15.678] testcase_run.sh[2310]: comparing output
+[Sep 14 11:26:15.681] testcase_run.sh[2310]: starting compare script '/domjudge/output/judgings/domjudge-contributor-0/endpoint-default/executable/compare/run'
+[Sep 14 11:26:15.684] testcase_run.sh[2310]: runcheck: sudo -n /domjudge/bin/runguard -P 0 -u domjudge-run-0 -g domjudge-run -m 2097152 -t 30 -c -f 2621440 -s 2621440 -M compare.meta -- /domjudge/output/judgings/domjudge-contributor-0/endpoint-default/executable/compare/run testdata.in testdata.out feedback/
+[Sep 14 11:26:15.712] testcase_run.sh[2310]: checking compare script exit-status: 42
+[Sep 14 11:26:15.714] testcase_run.sh[2310]: checking program run exit-status
+[Sep 14 11:26:15.728] testcase_run.sh[2310]: exiting with status '0'
+[Sep 14 11:26:15.729] judgedaemon[2120]: Testcase 1 done, result: correct
+[Sep 14 11:26:15.729] judgedaemon[2120]: API request POST judgehosts/add-judging-run/domjudge-contributor-0/1
+[Sep 14 11:26:15.942] judgedaemon[2120]: executing chroot script: 'chroot-startstop.sh stop'
+[Sep 14 11:26:15.967] judgedaemon[2120]: Judging s1/j1 finished
+[Sep 14 11:26:15.968] judgedaemon[2120]: API request POST judgehosts/next-judging/domjudge-contributor-0
+[Sep 14 11:26:16.069] judgedaemon[2120]: No submissions in queue (for endpoint default), waiting...
+[Sep 14 12:04:00.634] judgedaemon[2120]: warning: Error while executing curl POST to url http://localhost/api/judgehosts/next-judging/domjudge-contributor-0: Failed to connect to localhost port 80: Connection refused
+[Sep 14 12:04:00.634] judgedaemon[2120]: Registering judgehost on endpoint default: http://localhost/api
+[Sep 14 12:04:00.640] judgedaemon[2120]: API request POST judgehosts
+[Sep 14 12:04:00.641] judgedaemon[2120]: warning: Error while executing curl POST to url http://localhost/api/judgehosts: Failed to connect to localhost port 80: Connection refused
+[Sep 14 12:04:00.641] judgedaemon[2120]: Registering judgehost on endpoint default failed.
+[Sep 14 12:04:05.641] judgedaemon[2120]: Signal 15 received
+[Sep 14 12:04:05.642] judgedaemon[2120]: Received signal, exiting.

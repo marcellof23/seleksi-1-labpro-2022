@@ -1,0 +1,23 @@
+# Generated from 'sudoers-domjudge.in' on Tue Sep 14 09:18:13 CEST 2021.
+
+# Example sudoers configuration for DOMjudge judgehosts.
+# Check the file paths (especially the chroot prefix),
+# give it file mode 0440 and place this file into /etc/sudoers.d/
+# (most recent sudo versions; otherwise use an #include statement
+# in or add its content to the end of /etc/sudoers)
+
+domjudge ALL=(root) NOPASSWD: /domjudge/bin/runguard *
+domjudge ALL=(root) NOPASSWD: /bin/cp -pR /dev/null ../dev/null
+domjudge ALL=(root) NOPASSWD: /bin/chown -R domjudge\: /domjudge/output/judgings/*
+
+# The chroot path below must match the path in chroot-startstop.sh.
+domjudge ALL=(root) NOPASSWD: /bin/mount -n --bind /proc proc
+domjudge ALL=(root) NOPASSWD: /bin/umount /*/proc
+domjudge ALL=(root) NOPASSWD: /bin/mount --bind /chroot/domjudge/*
+domjudge ALL=(root) NOPASSWD: /bin/mount -o remount\,ro\,bind /domjudge/output/judgings/*
+domjudge ALL=(root) NOPASSWD: /bin/umount /domjudge/output/judgings/*
+domjudge ALL=(root) NOPASSWD: /bin/umount -f -vvv /domjudge/output/judgings/*
+domjudge ALL=(root) NOPASSWD: /bin/cp -pR /dev/random dev
+domjudge ALL=(root) NOPASSWD: /bin/cp -pR /dev/urandom dev
+domjudge ALL=(root) NOPASSWD: /bin/chmod o-w dev/random dev/urandom
+
