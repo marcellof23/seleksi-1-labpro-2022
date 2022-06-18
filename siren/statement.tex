@@ -1,0 +1,149 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=40mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Seleksi Asisten Laboratorium Pemrograman STEI ITB 2022/2023}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Siren} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 64MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Seorang klien menerima sebuah {\it data stream} berupa bit acak pada setiap interval. Bit-bit tersebut kemudian diolah menjadi sebuah string. Klien tersebut ingin membuat kumpulan bit tersebut menjadi sebuah kumpulan bit yang saling berselang-seling. Klien tersebut ingin proses perubahannya terjadi dengan cepat dan efisien. Kalian yang berperan sebagai {\it engineer} akan memenuhi permintaan tersebut. Buatlah sebuah program untuk mengubah kumpulan bit acak tersebut menjadi bit yang saling berselang-seling dengan perubahan bit yang minimal, kemudian cetak berapa kali perubahan minimal tersebut ke layar!
+
+\subsection*{Format Masukan}
+Masukan hanya terdiri dari satu baris. Baris pertama adalah sebuah string S yang merepresentasikan sebuah {\it bit stream} acak.
+
+\subsection*{Format Keluaran}
+Keluaran terdiri dari satu baris yang merupakan sebuah integer yang merepresentasikan berapa kali bit diubah secara minimal agar menjadi selang-seling.
+
+\subsection*{Batasan Masukan}
+\begin{itemize}
+ \item $0 \leq |S|  \leq 10^5$
+\end{itemize}
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+111000
+\end{lstlisting}
+\null
+\columnbreak
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+2
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+000111
+\end{lstlisting}
+\null
+\columnbreak
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+2
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 3}
+\begin{lstlisting}
+11010101101010111010101
+\end{lstlisting}
+\null
+\columnbreak
+\subsection*{Contoh Keluaran 3}
+\begin{lstlisting}
+8
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\pagebreak
+
+\subsection*{Penjelasan}
+Bit yang diubah ditandai dengan cetak \textbf{tebal}.
+\newline \newline
+Contoh 1\newline
+Input: 111000\newline
+Proses:
+\begin{enumerate}
+ \item 1\textbf{1}1000
+ \item 1010\textbf{0}0
+ \item 101010
+\end{enumerate}
+Catatan: Hasil akhirnya bisa saja menjadi 010101, tetapi proses perubahannya lebih banyak daripada proses di atas.\newline
+
+Contoh 2\newline
+Input: 000111\newline
+Proses:
+\begin{enumerate}
+ \item 0\textbf{0}0111
+ \item 0101\textbf{1}1
+ \item 010101
+\end{enumerate}
+
+Contoh 3\newline
+Input: 11010101101010111010101\newline
+Proses:
+\begin{enumerate}
+ \item 1\textbf{1}010101101010111010101
+ \item 10\textbf{0}10101101010111010101
+ \item 101\textbf{1}0101101010111010101 
+ \item 1010\textbf{0}101101010111010101
+ \item 10101\textbf{1}01101010111010101
+ \item 101010\textbf{0}1101010111010101
+ \item 1010101\textbf{1}101010111010101
+ \item 101010101010101\textbf{1}1010101
+ \item 10101010101010101010101
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,86 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=40mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Seleksi Asisten Laboratorium Pemrograman STEI ITB 2022/2023}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{LABPROGRAM} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 128MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Diberikan satu buah string acak S sebagai masukan. Dari huruf-huruf yang ada pada string tersebut mungkin dapat dibentuk kata `LABPROGRAM`. Hitunglah berapa kata `LABPROGRAM` yang dapat dibentuk!
+
+\subsection*{Format Masukan}
+Masukan hanya terdiri dari satu baris. Baris pertama adalah sebuah string acak S yang hanya terdiri dari huruf besar alfabet.
+
+\subsection*{Format Keluaran}
+Keluaran terdiri dari satu baris yang merupakan sebuah integer yang merepresentasikan jumlah kata `LABPROGRAM` yang dapat dibentuk.
+
+\subsection*{Batasan Masukan}
+\begin{itemize}
+ \item $1 \leq |S|  \leq 10^7$
+\end{itemize}
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+AXRHLDAYJRMLITLDAEPWBRBUXYPEZOGRZGOZRAM
+\end{lstlisting}
+\null
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+2
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+Terdapat dua kata `LABPROGRAM` yang dapat dibentuk dari string tersebut. Huruf-hurufnya ditandai dengan cetak \textbf{tebal}.
+\begin{enumerate}
+    \item \textbf{A}X\textbf{R}H\textbf{L}D\textbf{A}YJR\textbf{M}LITLDAE\textbf{P}W\textbf{BR}BUXYPEZ\textbf{OG}RZGOZRAM
+    \item AXRHLDAYJRM\textbf{L}ITLD\textbf{A}EPWBR\textbf{B}UXY\textbf{P}EZOG\textbf{R}Z\textbf{GO}Z\textbf{RAM}
+\end{enumerate}
+\end{document}
