@@ -1,0 +1,91 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=40mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Seleksi Asisten Laboratorium Pemrograman STEI ITB 2022/2023}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Menghitung XOR} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Diberikan Q buah perintah, setiap perintah Anda diberikan dua buah bilangan L dan R yang menyatakan rentang bilangan asli L sampai R (inklusif). Untuk setiap perintah, hitunglah nilai hasil \href{https://en.wikipedia.org/wiki/Exclusive_or}{XOR} dari L sampai R!
+
+\subsection*{Format Masukan}
+Baris pertama, berisi bilangan Q yang menyatakan banyaknya perintah. Q baris selanjutnya, berisi dua buah bilangan L dan R yang menyatakan rentang XOR.
+
+\subsection*{Format Keluaran}
+Keluaran berupa Q buah baris yang masing-masing berisi satu bilangan yaitu hasil XOR dari L sampai R.
+
+\subsection*{Batasan Masukan}
+\begin{itemize}
+ \item $1 \leq Q  \leq 2 \cdot 10^5$
+ \item $1 \leq L  \leq R  \leq 10^{18}$
+\end{itemize}
+
+\linebreak
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+2
+1 2
+7 10
+
+\end{lstlisting}
+\null
+\columnbreak
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+3
+12
+
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+1 XOR 2 = 01 XOR 10 = 11 (basis 2) = 3 (basis 10) \\
+7 XOR 8 XOR 9 XOR 10 = 0111 XOR 1000 XOR 1001 XOR 1010 = 1100 (basis 2) = 12 (basis 10) \\
+
+\end{document}
