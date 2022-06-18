@@ -3,7 +3,7 @@ using namespace tcframe;
 
 class ProblemSpec : public BaseProblemSpec {
 protected:
-    const int NMAX = 1e8;
+    const int NMAX = 1e7;
     string S;
     string out;
 
