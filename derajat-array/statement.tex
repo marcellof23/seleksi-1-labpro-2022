@@ -38,53 +38,42 @@
 \begin{document}
 
 \begin{center}
-    \section*{Mengubah Rentang Dinamis} % ganti judul soal
+    \section*{Subarray yang Setara} % ganti judul soal
 
     \begin{tabular}{ | c c | }
         \hline
-        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
-        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Memori & 128MB \\  % jangan lupa ganti memory limit
         \hline
     \end{tabular}
 \end{center}
 
 \subsection*{Deskripsi}
-Diberikan array bilangan asli dengan ukuran N, diberikan juga Q perintah yang harus dilakukan. Ada 2 tipe perintah:
-\begin{enumerate}
-    \item Tipe 1, diberikan bilangan K, keluarkan nilai array pada posisi ke-K!
-    \item Tipe 2, diberikan tiga bilangan A, B dan X, Untuk setiap nilai array dalam rentang (inklusif) [A, B] tambahkan dengan nilai P(X), dimana P(X) menyatakan bilangan prima ke-X!
-\end{enumerate}
+Pada suatu array bilangan bulat positif dengan panjang n, derajatnya adalah frekuensi terbesar dari elemen manapun dalam array tersebut.
+
+Tentukanlah panjang dari subarray (kontigu) terkecil yang memiliki derajat yang sama dengan array masukan.
+
 
 \subsection*{Format Masukan}
-Baris Pertama, berisi bilangan N dan Q, yang masing-masing menyatakan banyaknya array dan perintah
-Baris kedua, berisi N bilangan asli $AR_1, …, AR_N$, menyatakan nilai-nilai dari array N bilangan tersebut.
-Q baris selanjutnya berisi dua tipe perintah:
-\begin{itemize}
-    \item 1 K, untuk tipe pertama
-    \item 2 A B X, untuk tipe kedua
-\end{itemize}
+Baris Pertama, berisi bilangan N, yang menyatakan jumlah elemen dalam array.
+Baris kedua, berisi N bilangan bulat $E_1, …, E_N$, menyatakan  elemen-elemen dalam array.
 
 
 \subsection*{Format Keluaran}
-Keluaran berupa sebuah bilangan untuk setiap keluaran perintah tipe pertama.
+Keluaran berupa sebuah bilangan yang menyatakan panjang dari subarray terkecil yang memiliki derajat yang sama dengan array masukan.
 
 \subsection*{Batasan Masukan}
 \begin{itemize}
- \item $1 \leq  N, Q, K, X  \leq 10^5$
- \item $1 \leq  {AR_i}  \leq 10^5$
- \item $1 \leq  A \leq B  \leq N$
- \item $1 \leq  K \leq N$
+ \item $1 \leq  N  \leq 1000$
+ \item $1 \leq  {E_i}  \leq 50$
 \end{itemize}
 
 \linebreak
 \begin{multicols}{2}
 \subsection*{Contoh Masukan 1}
 \begin{lstlisting}
-8 3
-3 2 4 5 1 1 5 3
-1 4 
-2 2 5 1
-1 3
+7
+1 2 2 3 1 4 2
 
 
 \end{lstlisting}
@@ -92,7 +81,6 @@ Keluaran berupa sebuah bilangan untuk setiap keluaran perintah tipe pertama.
 \columnbreak
 \subsection*{Contoh Keluaran 1}
 \begin{lstlisting}
-5
 6
 \end{lstlisting}
 \vfill
@@ -100,11 +88,7 @@ Keluaran berupa sebuah bilangan untuk setiap keluaran perintah tipe pertama.
 \end{multicols}
 
 \subsection*{Penjelasan}
-Terdapat 3 perintah:
-\begin{itemize}
-    \item 1 4, karena tipe perintah pertama, dikeluarkan nilai array pada posisi 4 yaitu 5
-    \item 2 2 5 1, karena tipe perintah kedua, tambahkan nilai P(1) yaitu 2, dari posisi array 2 sampai 5, sehingga isi array sekarang: [3, 4, 6, 7, 3, 3, 5, 3]
-    \item 1 3, karena tipe perintah pertama, dikeluarkan nilai array pada posisi 3 yaitu 6
-\end{itemize}
+Karena elemen yang paling banyak muncul adalah 2, dengan frekuensi 3, maka derajat array masukan adalah 3.
+Subarray terkecil yang memiliki derajat 3 adalah [2, 2, 3, 1, 4, 2] dengan panjang 6.
 
 \end{document}
