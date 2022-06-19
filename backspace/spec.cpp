@@ -55,19 +55,19 @@ protected:
         // all backspace
         CASE(S = generateAllBackspace(NMAX));
         // random string up to NMAX/2 with less backspace
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             CASE(S = generateRandomString(rnd.nextInt(1, NMAX / 2)));
         }
         // random string up to NMAX/2 with more backspace
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             CASE(S = generateRandomStringWithGachaBackspace(rnd.nextInt(1, NMAX / 2)));
         }
         // random string up to NMAX with less backspace
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             CASE(S = generateRandomString(NMAX));
         }
         // random string up to  NMAX with more backspace
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             CASE(S = generateRandomStringWithGachaBackspace(NMAX));
         }
     }

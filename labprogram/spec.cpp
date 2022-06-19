@@ -51,19 +51,19 @@ protected:
 
     void TestCases() {
         // random string up to NMAX / 2
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 10; i++) {
             CASE(S = generateRandomString(rnd.nextInt(0, NMAX / 2)));
         }
         // random string with more labprogram up to NMAX / 2
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 10; i++) {
             CASE(S = generateRandomStringWithMoreLabprogram(rnd.nextInt(0, NMAX / 2)));
         }
         // random string all NMAX
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             CASE(S = generateRandomString(NMAX));
         }
         // random string with more labprogram all NMAX
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             CASE(S = generateRandomStringWithMoreLabprogram(NMAX));
         }
     }
