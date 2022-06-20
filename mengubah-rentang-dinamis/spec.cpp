@@ -6,9 +6,9 @@ using namespace std;
 
 class ProblemSpec : public BaseProblemSpec {
 protected:
-    const int QMAX = 1e5;
-    const int NMAX = 1e5;
-    const int ARMAX = 1e5;
+    const int QMAX = 2*1e5;
+    const int NMAX = 2*1e5;
+    const int ARMAX = 2*1e5;
     const int XMAX = 1e5;
     
     int N, Q;
