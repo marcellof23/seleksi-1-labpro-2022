@@ -125,13 +125,57 @@ protected:
     }
 
     void TestCases() {
-        for(int i=0;i<20;i++) {
+        CASE(N = NMAX, Q = QMAX, genMaxRangeLenOps2Case(N, Q, AR, opsType, opsData));
+        CASE(N = NMAX, Q = QMAX, genMaxRangeLenOps1Case(N, Q, AR, opsType, opsData));
+        for(int i=0;i<18;i++) {
             CASE(N = rnd.nextInt(1, NMAX), Q = rnd.nextInt(1, QMAX), 
                 genRandomCase(N, Q, AR, opsType, opsData));
         }
     }
 
 private:
+    void genMaxRangeLenOps1Case(int N, int Q, vector<int> &AR, vector<int> &opsType, vector<vector<int>> &opsData) {
+        for(int i=0;i<N;i++) {
+            AR.push_back(rnd.nextInt(1, ARMAX));
+        }
+        int nFirstOps = Q-1;
+        int nSecondOps = 1;
+
+        for(int i=0;i<nSecondOps;i++) {
+            opsType.push_back(2);
+            int rA = 1;
+            int rB = N;
+            int rX = rnd.nextInt(1, XMAX);
+            opsData.push_back({rA, rB, rX});
+        }
+        for(int i=0;i<nFirstOps;i++) {
+            opsType.push_back(1);
+            int rK = N;
+            opsData.push_back({rK});
+        }
+    }
+
+    void genMaxRangeLenOps2Case(int N, int Q, vector<int> &AR, vector<int> &opsType, vector<vector<int>> &opsData) {
+        for(int i=0;i<N;i++) {
+            AR.push_back(rnd.nextInt(1, ARMAX));
+        }
+        int nFirstOps = 1;
+        int nSecondOps = Q-1;
+
+        for(int i=0;i<nSecondOps;i++) {
+            opsType.push_back(2);
+            int rA = 1;
+            int rB = N;
+            int rX = rnd.nextInt(1, XMAX);
+            opsData.push_back({rA, rB, rX});
+        }
+        for(int i=0;i<nFirstOps;i++) {
+            opsType.push_back(1);
+            int rK = rnd.nextInt(1, N);
+            opsData.push_back({rK});
+        }
+    }
+
     void genRandomCase(int N, int Q, vector<int> &AR, vector<int> &opsType, vector<vector<int>> &opsData) {
         for(int i=0;i<N;i++) {
             AR.push_back(rnd.nextInt(1, ARMAX));
@@ -141,6 +185,8 @@ private:
 
         for(int i=0;i<Q;i++) {
             int randOps = rnd.nextInt(1, 2);
+            if(randOps == 1 && nFirstOps == 0) randOps = 2;
+            if(randOps == 2 && nSecondOps == 0) randOps = 1;
 
             if(randOps == 1 && nFirstOps != 0) {
                 opsType.push_back(1);
