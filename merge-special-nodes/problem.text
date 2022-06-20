@@ -1,0 +1,138 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{tikz}  
+% the settings of tikz is used for the optimization of the graphs  
+\usetikzlibrary{shapes, arrows, calc, arrows.meta, fit, positioning} % these are the parameters passed to the library to create the node graphs  
+\tikzset{  
+    -Latex,auto,node distance =1.5 cm and 1.3 cm, thick,% node distance is the distance between one node to other, where 1.5cm is the length of the edge between the nodes  
+    state/.style ={ellipse, draw, minimum width = 0.9 cm}, % the minimum width is the width of the ellipse, which is the size of the shape of vertex in the node graph  
+    point/.style = {circle, draw, inner sep=0.18cm, fill, node contents={}},  
+    bidirected/.style={Latex-Latex,dashed}, % it is the edge having two directions  
+    el/.style = {inner sep=2.5pt, align=right, sloped}  
+}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=40mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Seleksi Asisten Laboratorium Pemrograman STEI ITB 2022/2023}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Menggabungkan Node} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 8MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Diberikan beberapa node istimewa, node ini berisi nilai 0 - 9. Anda diminta menggabungkan node yang berurutan. Penggabungan node istimewa akan menghasilkan node istimewa juga, dengan nilainya adalah penjumlahan dari kedua node tersebut. Karena ini juga node istimewa maka hasilnya akan dimodulo 10 sehingga nilainya di antara 0 dan 9. Lakukan penggabungan sehingga tinggal tersisa 1 node, dan keluarkan nilainya
+
+\subsection*{Format Masukan}
+Baris Pertama, berisi satu bilangan bulat N, menyatakan banyaknya node
+Baris selanjutnya berisi node-node yang akan diolah
+
+
+
+\subsection*{Format Keluaran}
+Keluarkan hasil penggabungan nodenya
+
+\subsection*{Batasan Masukan}
+\begin{itemize}
+ \item $1 \leq N  \leq  10^3$
+\end{itemize}
+
+\linebreak
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+5
+1 2 3 4 5
+
+\end{lstlisting}
+\null
+\columnbreak
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+8
+
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+\begin{tikzpicture}
+    [scale=.9,auto=center,every node/.style={circle,fill=blue!20}]
+    \node (a1) at (1,5) {1};
+    \node (a2) at (3,5) {2};
+    \node (a3) at (5,5) {3};
+    \node (a4) at (7,5) {4};
+    \node (a5) at (9,5) {5};
+    \node (a6) at (2,4) {3};
+    \node (a7) at (4,4) {5};
+    \node (a8) at (6,4) {7};
+    \node (a9) at (8,4) {9};
+    \node (a10) at (3,3) {8};
+    \node (a11) at (5,3) {2};
+    \node (a12) at (7,3) {6};
+    \node (a13) at (4,2) {0};
+    \node (a14) at (6,2) {8};
+    \node (a15) at (5,1) {8};
+    
+    \path (a1) edge (a6);
+    \path (a2) edge (a6);
+    \path (a2) edge (a7);
+    \path (a3) edge (a7);
+    \path (a3) edge (a8);
+    \path (a4) edge (a8);
+    \path (a4) edge (a9);
+    \path (a5) edge (a9);
+    \path (a6) edge (a10);
+    \path (a7) edge (a10);
+    \path (a7) edge (a11);
+    \path (a8) edge (a11);
+    \path (a8) edge (a12);
+    \path (a9) edge (a12);
+    \path (a10) edge (a13);
+    \path (a11) edge (a13);
+    \path (a11) edge (a14);
+    \path (a12) edge (a14);
+    \path (a13) edge (a15);
+    \path (a14) edge (a15);
+\end{tikzpicture}
+
+\end{document}

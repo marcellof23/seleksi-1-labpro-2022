@@ -1,0 +1,100 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=40mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+\lfoot{Seleksi Asisten Laboratorium Pemrograman STEI ITB 2022/2023}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+    \section*{Kurung Seimbang} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 8MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Tanda kurung terdiri dari 3 jenis, yaitu pasangan “()”, “\{\}”, dan “[]”. Kita definisikan bahwa suatu string disebut sebagai kurung yang seimbang jika:
+Kurung pembukanya berpasangan dengan kurung penutup.
+Isi dari kedua kurung tersebut juga kurung yang seimbang.
+
+Sebagai contoh “[()]” merupakan kurung yang seimbang. Sedangkan “\{[\}\}” bukan kurung yang seimbang.
+
+DIberikan N buah string, print 1 jika string merupakan kurung yang seimbang, print 0 jika sebaliknya.
+
+
+\subsection*{Format Masukan}
+Baris pertama berisi satu bilangan bulat N, menyatakan banyaknya string
+N baris selanjutnya berisi string yang akan diolah
+
+
+
+\subsection*{Format Keluaran}
+Keluarkan 1 atau 0 untuk tiap string
+\subsection*{Batasan Masukan}
+\begin{itemize}
+ \item $1 \leq N  \leq 10^3$
+ \item $1 \leq |s|  \leq 10^{18}$ dengan $|s|$ merupakan panjang dari string $s$
+\end{itemize}
+
+\linebreak
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+2
+{{}}
+{[]}()
+
+
+\end{lstlisting}
+\null
+\columnbreak
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+1
+1
+
+
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+
+\end{document}
