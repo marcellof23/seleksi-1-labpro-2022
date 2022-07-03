@@ -23,8 +23,9 @@ bool isBalanced(string s) {
 
 int main() {
     int q; cin >> q;
-    while(q--) {
-        string s; cin >> s;
-        cout << isBalanced(s) << "\n";
+    string s;
+    getline(cin, s);
+    while(getline(cin, s)) {
+       cout << isBalanced(s) << "\n";
     }
 }
